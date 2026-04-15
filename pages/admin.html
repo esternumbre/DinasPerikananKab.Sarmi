@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Dinas Perikanan</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%231e40af' width='100' height='100'/><text x='50' y='65' font-size='70' text-anchor='middle' fill='white' font-weight='bold'>DP</text></svg>">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-100 flex h-screen overflow-hidden">
+
+    <aside class="w-64 bg-slate-900 text-white flex flex-col">
+        <div class="p-6 text-2xl font-bold border-b border-slate-800 italic">ADMIN DP</div>
+        <nav class="flex-1 p-4 space-y-2">
+            <a href="#" class="block p-3 bg-blue-600 rounded-lg">Dashboard</a>
+            <a href="#" class="block p-3 hover:bg-slate-800 rounded-lg transition">Kelola Berita</a>
+            <a href="#" class="block p-3 hover:bg-slate-800 rounded-lg transition">Kelola Galeri</a>
+            <a href="../index.html" class="block p-3 hover:bg-red-500 rounded-lg transition mt-10">Lihat Website</a>
+        </nav>
+    </aside>
+
+    <main class="flex-1 flex flex-col overflow-y-auto">
+        <header class="h-16 bg-white border-b flex items-center justify-between px-8">
+            <h2 class="font-bold text-slate-700 uppercase tracking-widest text-sm">Overview</h2>
+            <div class="flex items-center gap-3">
+                <span class="text-sm font-medium">Administrator</span>
+                <div class="w-8 h-8 bg-slate-200 rounded-full"></div>
+            </div>
+        </header>
+
+        <div class="p-8">
+            <div class="bg-white p-6 rounded-xl shadow-sm mb-8 border border-slate-200">
+                <h3 class="text-lg font-bold mb-4">Tambah Berita Baru</h3>
+                <form id="newsForm" class="grid grid-cols-2 gap-4">
+                    <input type="text" id="title" placeholder="Judul Berita" class="p-3 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none" required>
+                    <input type="date" id="date" class="p-3 border rounded-lg outline-none" required>
+                    <input type="url" id="image" placeholder="URL Gambar (Unsplash/Picsum)" class="p-3 border rounded-lg col-span-2 outline-none">
+                    <textarea id="content" placeholder="Konten Berita" class="p-3 border rounded-lg col-span-2 h-32 outline-none"></textarea>
+                    <button type="submit" class="bg-blue-600 text-white py-3 rounded-lg font-bold hover:bg-blue-700 transition">Simpan Berita</button>
+                </form>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+                <table class="w-full text-left">
+                    <thead class="bg-slate-50 border-b">
+                        <tr>
+                            <th class="p-4">Judul</th>
+                            <th class="p-4">Tanggal</th>
+                            <th class="p-4">Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody id="newsTableBody">
+                        </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const newsForm = document.getElementById('newsForm');
+        const newsTableBody = document.getElementById('newsTableBody');
+
+        // CRUD Logic
+        let newsData = JSON.parse(localStorage.getItem('berita')) || [];
+
+        function renderTable() {
+            newsTableBody.innerHTML = '';
+            newsData.forEach((item, index) => {
+                newsTableBody.innerHTML += `
+                    <tr class="border-b">
+                        <td class="p-4 font-medium">${item.title}</td>
+                        <td class="p-4 text-slate-500">${item.date}</td>
+                        <td class="p-4">
+                            <button onclick="deleteNews(${index})" class="text-red-500 hover:underline">Hapus</button>
+                        </td>
+                    </tr>
+                `;
+            });
+        }
+
+        newsForm.onsubmit = (e) => {
+            e.preventDefault();
+            const newItem = {
+                title: document.getElementById('title').value,
+                date: document.getElementById('date').value,
+                image: document.getElementById('image').value || 'https://picsum.photos/400/250',
+                content: document.getElementById('content').value
+            };
+            newsData.push(newItem);
+            localStorage.setItem('berita', JSON.stringify(newsData));
+            newsForm.reset();
+            renderTable();
+            alert('Berita berhasil ditambahkan!');
+        };
+
+        window.deleteNews = (index) => {
+            if(confirm('Hapus berita ini?')) {
+                newsData.splice(index, 1);
+                localStorage.setItem('berita', JSON.stringify(newsData));
+                renderTable();
+            }
+        }
+
+        renderTable();
+    </script>
+</body>
+</html>
