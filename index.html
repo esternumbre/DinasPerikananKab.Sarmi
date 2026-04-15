@@ -12,11 +12,36 @@
         .glass { background: rgba(248, 244, 237, 0.88); backdrop-filter: blur(14px); border-color: rgba(59, 130, 246, 0.18); }
         .bg-cream { background: #f8f4ed; }
         .text-cream-muted { color: #5b6776; }
+        .slide { opacity: 0; transition: opacity 0.5s ease; }
+        .slide.active { opacity: 1; }
+        .slide-dot.active { background-color: rgba(255, 255, 255, 0.9); }
     </style>
 </head>
 <body class="bg-[#f8f4ed] text-slate-900">
 
-    <nav class="fixed w-full z-50 glass border-b border-blue-200/40 shadow-sm shadow-slate-200/10">
+    <!-- Topbar -->
+    <div class="fixed top-0 w-full bg-blue-900 text-white py-2 z-40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center text-sm">
+                <div id="date-time" class="font-medium">
+                    <!-- Tanggal dan jam akan diisi oleh JavaScript -->
+                </div>
+                <div class="flex space-x-4">
+                    <a href="https://instagram.com" target="_blank" rel="noreferrer" class="hover:text-blue-200 transition">
+                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm0 1.5A4.25 4.25 0 003.5 7.75v8.5A4.25 4.25 0 007.75 20.5h8.5A4.25 4.25 0 0020.5 16.25v-8.5A4.25 4.25 0 0016.25 3.5h-8.5z"></path><path d="M12 7.25a4.75 4.75 0 110 9.5 4.75 4.75 0 010-9.5zm0 1.5a3.25 3.25 0 100 6.5 3.25 3.25 0 000-6.5zm4.75-.9a1.1 1.1 0 110 2.2 1.1 1.1 0 010-2.2z"></path></svg>
+                    </a>
+                    <a href="https://wa.me/6281234567890" target="_blank" rel="noreferrer" class="hover:text-blue-200 transition">
+                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.966-.273-.099-.472-.148-.672.149-.198.297-.768.966-.94 1.164-.173.198-.346.223-.644.075-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.075-.149-.672-1.612-.921-2.207-.242-.579-.487-.5-.672-.51l-.573-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.064 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.262.489 1.694.626.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.174-1.414-.074-.124-.272-.198-.57-.347z"></path><path d="M12 2C6.486 2 2 6.485 2 12.001a9.91 9.91 0 001.495 5.02L2 22l4.955-1.302A9.93 9.93 0 0012 22.001c5.514 0 10-4.486 10-10.001S17.514 2 12 2z"></path></svg>
+                    </a>
+                    <a href="https://facebook.com" target="_blank" rel="noreferrer" class="hover:text-blue-200 transition">
+                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 3h-2.5c-2.485 0-3 1.515-3 3.5V9H5v3h3v9h3v-9h3.75l.5-3H11V6.5c0-.425.075-.5.5-.5h1.5V3z"></path></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="fixed top-8 w-full z-50 glass border-b border-blue-200/40 shadow-sm shadow-slate-200/10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-20 items-center">
                 <div class="flex items-center gap-3">
@@ -24,10 +49,54 @@
                     <span class="font-bold text-xl tracking-tight text-slate-900">Dinas Perikanan<span class="text-blue-700"> Kabupaten Sarmi</span></span>
                 </div>
                 
-                <div class="hidden md:flex space-x-8 font-medium text-slate-700">
+                <div class="hidden md:flex space-x-8 font-medium text-slate-700 relative">
                     <a href="index.html" class="text-blue-800">Beranda</a>
-                    <a href="pages/profil.html" class="hover:text-blue-900 transition">Profil</a>
-                    <a href="pages/layanan.html" class="hover:text-blue-900 transition">Layanan</a>
+                    
+                    <!-- Profil Dropdown -->
+                    <div class="relative group">
+                        <a href="pages/profil.html" class="hover:text-blue-900 transition flex items-center">
+                            Profil <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </a>
+                        <div class="absolute left-0 mt-2 w-48 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                            <a href="pages/profil.html#visi-misi" class="block px-4 py-2 text-sm text-slate-700 hover:bg-blue-50">Visi & Misi</a>
+                            <a href="pages/profil.html#struktur" class="block px-4 py-2 text-sm text-slate-700 hover:bg-blue-50">Struktur Organisasi</a>
+                            <a href="pages/profil.html#sejarah" class="block px-4 py-2 text-sm text-slate-700 hover:bg-blue-50">Sejarah</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Layanan Mega Menu -->
+                    <div class="relative group">
+                        <a href="pages/layanan.html" class="hover:text-blue-900 transition flex items-center">
+                            Layanan <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </a>
+                        <div class="absolute left-0 mt-2 w-96 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 p-6">
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <h4 class="font-semibold text-slate-900 mb-2">Perizinan</h4>
+                                    <a href="pages/layanan.html#izin-usaha" class="block text-sm text-slate-600 hover:text-blue-600">Izin Usaha Perikanan</a>
+                                    <a href="pages/layanan.html#izin-tangkap" class="block text-sm text-slate-600 hover:text-blue-600">Izin Penangkapan</a>
+                                    <a href="pages/layanan.html#izin-budidaya" class="block text-sm text-slate-600 hover:text-blue-600">Izin Budidaya</a>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-slate-900 mb-2">Pelatihan</h4>
+                                    <a href="pages/layanan.html#pelatihan-teknis" class="block text-sm text-slate-600 hover:text-blue-600">Pelatihan Teknis</a>
+                                    <a href="pages/layanan.html#pelatihan-bisnis" class="block text-sm text-slate-600 hover:text-blue-600">Pelatihan Bisnis</a>
+                                    <a href="pages/layanan.html#pelatihan-keselamatan" class="block text-sm text-slate-600 hover:text-blue-600">Pelatihan Keselamatan</a>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-slate-900 mb-2">Konsultasi</h4>
+                                    <a href="pages/layanan.html#konsultasi-bisnis" class="block text-sm text-slate-600 hover:text-blue-600">Konsultasi Bisnis</a>
+                                    <a href="pages/layanan.html#konsultasi-teknologi" class="block text-sm text-slate-600 hover:text-blue-600">Konsultasi Teknologi</a>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-slate-900 mb-2">Data & Statistik</h4>
+                                    <a href="pages/layanan.html#data-produksi" class="block text-sm text-slate-600 hover:text-blue-600">Data Produksi</a>
+                                    <a href="pages/layanan.html#statistik-pasar" class="block text-sm text-slate-600 hover:text-blue-600">Statistik Pasar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
                     <a href="pages/berita.html" class="hover:text-blue-900 transition">Berita</a>
                     <a href="pages/galeri.html" class="hover:text-blue-900 transition">Galeri</a>
                     <a href="pages/kontak.html" class="px-5 py-2 bg-blue-900 text-white rounded-full shadow-lg shadow-blue-900/20 hover:bg-blue-800 transition">Kontak</a>
@@ -40,51 +109,116 @@
         </div>
     </nav>
 
-    <section class="relative w-full min-h-[550px] flex items-center justify-center overflow-hidden pt-20">
-        <!-- Background Image with Overlay -->
-        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('assets/images/KabupatenSarmi.jpg'); background-attachment: fixed;"></div>
-        
-        <!-- Glossy Transparent Overlay -->
-        <div class="absolute inset-0 bg-gradient-to-b from-blue-900/50 via-blue-950/60 to-slate-950/75" style="backdrop-filter: blur(10px);"></div>
-        
-        <!-- Light Glossy Effect Overlay -->
-        <div class="absolute inset-0" style="background: linear-gradient(135deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0) 45%, rgba(255,255,255,0.08) 55%, rgba(0,0,0,0.08) 100%);"></div>
-        
-        <!-- Content -->
-        <div class="relative z-20 text-center space-y-8 px-4">
-            <!-- Logo -->
-            <div class="flex justify-center mb-8">
-                <img src="assets/images/logo.png" alt="Logo SARMI" class="h-32 w-32 object-contain drop-shadow-lg">
+    <section class="relative w-full min-h-[550px] overflow-hidden pt-28">
+        <!-- Slider Container -->
+        <div id="hero-slider" class="relative w-full h-[550px]">
+            <!-- Slide 1 -->
+            <div class="slide active absolute inset-0 bg-cover bg-center" style="background-image: url('https://easysyntax.github.io/placeholders/Landscape%201720%20x%201080.svg');">
+                <div class="absolute inset-0 bg-gradient-to-b from-blue-900/50 via-blue-950/60 to-slate-950/75"></div>
+                <div class="absolute inset-0 bg-gradient-to-r from-black/20 to-transparent"></div>
+                <div class="relative z-20 flex items-center justify-center h-full px-4">
+                    <div class="text-center space-y-8 max-w-4xl">
+                        <h1 class="text-5xl md:text-7xl font-black text-white drop-shadow-lg">
+                            PENGEMBANGAN <br> PERIKANAN BERKELANJUTAN
+                        </h1>
+                        <p class="text-xl md:text-2xl text-white/90 drop-shadow-lg">
+                            Mendorong inovasi dan teknologi untuk masa depan perikanan yang lebih baik
+                        </p>
+                        <a href="pages/layanan.html" class="inline-block px-8 py-4 bg-blue-600 text-white rounded-full text-lg font-semibold hover:bg-blue-700 transition shadow-lg">
+                            Pelajari Lebih Lanjut
+                        </a>
+                    </div>
+                </div>
             </div>
-
-            <!-- Main Title -->
-            <div class="space-y-4">
-                <h1 class="text-5xl md:text-7xl font-black text-white drop-shadow-lg" style="text-shadow: 2px 2px 8px rgba(0,0,0,0.5), -1px -1px 0px rgba(255,255,255,0.2);">
-                    DINAS PERIKANAN
-                </h1>
-                <h2 class="text-4xl md:text-5xl font-black text-white drop-shadow-lg" style="text-shadow: 2px 2px 8px rgba(0,0,0,0.5), -1px -1px 0px rgba(255,255,255,0.2);">
-                    KABUPATEN SARMI
-                </h2>
+            
+            <!-- Slide 2 -->
+            <div class="slide absolute inset-0 bg-cover bg-center" style="background-image: url('https://easysyntax.github.io/placeholders/Landscape%201720%20x%201080.svg');">
+                <div class="absolute inset-0 bg-gradient-to-b from-blue-900/50 via-blue-950/60 to-slate-950/75"></div>
+                <div class="absolute inset-0 bg-gradient-to-r from-black/20 to-transparent"></div>
+                <div class="relative z-20 flex items-center justify-center h-full px-4">
+                    <div class="text-center space-y-8 max-w-4xl">
+                        <h1 class="text-5xl md:text-7xl font-black text-white drop-shadow-lg">
+                            PEMBERDAYAAN <br> NELAYAN LOKAL
+                        </h1>
+                        <p class="text-xl md:text-2xl text-white/90 drop-shadow-lg">
+                            Memberikan pelatihan dan dukungan untuk meningkatkan kesejahteraan nelayan
+                        </p>
+                        <a href="pages/profil.html" class="inline-block px-8 py-4 bg-green-600 text-white rounded-full text-lg font-semibold hover:bg-green-700 transition shadow-lg">
+                            Lihat Program Kami
+                        </a>
+                    </div>
+                </div>
             </div>
+            
+            <!-- Slide 3 -->
+            <div class="slide absolute inset-0 bg-cover bg-center" style="background-image: url('https://easysyntax.github.io/placeholders/Landscape%201720%20x%201080.svg');">
+                <div class="absolute inset-0 bg-gradient-to-b from-blue-900/50 via-blue-950/60 to-slate-950/75"></div>
+                <div class="absolute inset-0 bg-gradient-to-r from-black/20 to-transparent"></div>
+                <div class="relative z-20 flex items-center justify-center h-full px-4">
+                    <div class="text-center space-y-8 max-w-4xl">
+                        <h1 class="text-5xl md:text-7xl font-black text-white drop-shadow-lg">
+                            KONSERVASI <br> SUMBER DAYA LAUT
+                        </h1>
+                        <p class="text-xl md:text-2xl text-white/90 drop-shadow-lg">
+                            Melindungi ekosistem laut untuk generasi mendatang
+                        </p>
+                        <a href="pages/berita.html" class="inline-block px-8 py-4 bg-teal-600 text-white rounded-full text-lg font-semibold hover:bg-teal-700 transition shadow-lg">
+                            Baca Berita Terbaru
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slider Controls -->
+        <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-2 z-30">
+            <button id="prev-slide" class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+            </button>
+            <div class="flex space-x-2">
+                <button class="slide-dot w-3 h-3 bg-white/50 rounded-full active" data-slide="0"></button>
+                <button class="slide-dot w-3 h-3 bg-white/50 rounded-full" data-slide="1"></button>
+                <button class="slide-dot w-3 h-3 bg-white/50 rounded-full" data-slide="2"></button>
+            </div>
+            <button id="next-slide" class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            </button>
         </div>
     </section>
 
-    <section id="statistik" class="max-w-7xl mx-auto px-4 -mt-10 bg-[#f8f4ed] py-12 rounded-3xl shadow-inner shadow-slate-200/80">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div class="bg-white/95 p-8 rounded-3xl shadow-lg border border-blue-100 group hover:-translate-y-2 transition">
-                <p class="text-slate-600 font-medium">Jumlah Nelayan Terdata</p>
-                <h3 class="text-4xl font-bold text-blue-900">12.450</h3>
-                <div class="w-12 h-1 bg-blue-200 mt-4 group-hover:w-full transition-all"></div>
+    <section class="max-w-7xl mx-auto px-4 -mt-10 bg-[#f8f4ed] py-12 rounded-3xl shadow-inner shadow-slate-200/80">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-bold text-slate-900 mb-4">Layanan Kami</h2>
+            <p class="text-slate-600 text-lg">Kami menyediakan berbagai layanan untuk mendukung industri perikanan</p>
+        </div>
+        <div class="grid md:grid-cols-4 gap-6">
+            <div class="bg-white p-8 rounded-3xl shadow-lg border border-blue-100 hover:shadow-2xl transition group">
+                <div class="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-blue-800 transition">
+                    <svg class="w-8 h-8 text-blue-700 group-hover:text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M10.5 1.5H3.75A2.25 2.25 0 001.5 3.75v12.5A2.25 2.25 0 003.75 18.5h12.5a2.25 2.25 0 002.25-2.25V9.5M10.5 1.5v6h6M10.5 1.5L16.5 7.5"></path></svg>
+                </div>
+                <h3 class="text-xl font-bold mb-2 text-slate-900">Perizinan</h3>
+                <p class="text-slate-600">Proses perizinan usaha perikanan yang mudah dan transparan</p>
             </div>
-            <div class="bg-white/95 p-8 rounded-3xl shadow-lg border border-blue-100 group hover:-translate-y-2 transition">
-                <p class="text-slate-600 font-medium">Produksi Ikan (Ton/Tahun)</p>
-                <h3 class="text-4xl font-bold text-blue-900">45.200</h3>
-                <div class="w-12 h-1 bg-blue-200 mt-4 group-hover:w-full transition-all"></div>
+            <div class="bg-white p-8 rounded-3xl shadow-lg border border-blue-100 hover:shadow-2xl transition group">
+                <div class="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-blue-800 transition">
+                    <svg class="w-8 h-8 text-blue-700 group-hover:text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"></path><path fill-rule="evenodd" d="M4 5a2 2 0 012-2 1 1 0 000 2h10a1 1 0 100-2 2 2 0 012 2v9a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 100 2h6a1 1 0 100-2H7z" clip-rule="evenodd"></path></svg>
+                </div>
+                <h3 class="text-xl font-bold mb-2 text-slate-900">Pelatihan</h3>
+                <p class="text-slate-600">Program pelatihan untuk meningkatkan kompetensi nelayan</p>
             </div>
-            <div class="bg-white/95 p-8 rounded-3xl shadow-lg border border-blue-100 group hover:-translate-y-2 transition">
-                <p class="text-slate-600 font-medium">Kelompok Usaha (KUB)</p>
-                <h3 class="text-4xl font-bold text-blue-900">842</h3>
-                <div class="w-12 h-1 bg-blue-200 mt-4 group-hover:w-full transition-all"></div>
+            <div class="bg-white p-8 rounded-3xl shadow-lg border border-blue-100 hover:shadow-2xl transition group">
+                <div class="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-blue-800 transition">
+                    <svg class="w-8 h-8 text-blue-700 group-hover:text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M8.433 7.418c.155.03.299.076.438.114a.773.773 0 00.918-.738 1.667 1.667 0 00-1.945-1.945c-.178.035-.359.09-.738.918a.744.744 0 00.114.438z"></path><path fill-rule="evenodd" d="M4.343 8.343a8 8 0 1115.656-1.343 8 8 0 01-15.656 1.343zM13.956 9.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" clip-rule="evenodd"></path></svg>
+                </div>
+                <h3 class="text-xl font-bold mb-2 text-slate-900">Konsultasi</h3>
+                <p class="text-slate-600">Layanan konsultasi bisnis perikanan dari para ahli</p>
+            </div>
+            <div class="bg-white p-8 rounded-3xl shadow-lg border border-blue-100 hover:shadow-2xl transition group">
+                <div class="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-blue-800 transition">
+                    <svg class="w-8 h-8 text-blue-700 group-hover:text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"></path></svg>
+                </div>
+                <h3 class="text-xl font-bold mb-2 text-slate-900">Data & Statistik</h3>
+                <p class="text-slate-600">Informasi data perikanan yang akurat dan terpercaya</p>
             </div>
         </div>
     </section>
@@ -99,46 +233,6 @@
         </div>
         <div class="grid md:grid-cols-3 gap-8" id="news-container">
             </div>
-    </section>
-
-    <!-- Section Layanan -->
-    <section class="bg-[#f8f4ed] py-24">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-slate-900 mb-4">Layanan Kami</h2>
-                <p class="text-slate-600 text-lg">Kami menyediakan berbagai layanan untuk mendukung industri perikanan</p>
-            </div>
-            <div class="grid md:grid-cols-4 gap-6">
-                <div class="bg-white p-8 rounded-3xl shadow-lg border border-blue-100 hover:shadow-2xl transition group">
-                    <div class="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-blue-800 transition">
-                        <svg class="w-8 h-8 text-blue-700 group-hover:text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M10.5 1.5H3.75A2.25 2.25 0 001.5 3.75v12.5A2.25 2.25 0 003.75 18.5h12.5a2.25 2.25 0 002.25-2.25V9.5M10.5 1.5v6h6M10.5 1.5L16.5 7.5"></path></svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2 text-slate-900">Perizinan</h3>
-                    <p class="text-slate-600">Proses perizinan usaha perikanan yang mudah dan transparan</p>
-                </div>
-                <div class="bg-white p-8 rounded-3xl shadow-lg border border-blue-100 hover:shadow-2xl transition group">
-                    <div class="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-blue-800 transition">
-                        <svg class="w-8 h-8 text-blue-700 group-hover:text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"></path><path fill-rule="evenodd" d="M4 5a2 2 0 012-2 1 1 0 000 2h10a1 1 0 100-2 2 2 0 012 2v9a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 100 2h6a1 1 0 100-2H7z" clip-rule="evenodd"></path></svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2 text-slate-900">Pelatihan</h3>
-                    <p class="text-slate-600">Program pelatihan untuk meningkatkan kompetensi nelayan</p>
-                </div>
-                <div class="bg-white p-8 rounded-3xl shadow-lg border border-blue-100 hover:shadow-2xl transition group">
-                    <div class="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-blue-800 transition">
-                        <svg class="w-8 h-8 text-blue-700 group-hover:text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M8.433 7.418c.155.03.299.076.438.114a.773.773 0 00.918-.738 1.667 1.667 0 00-1.945-1.945c-.178.035-.359.09-.738.918a.744.744 0 00.114.438z"></path><path fill-rule="evenodd" d="M4.343 8.343a8 8 0 1115.656-1.343 8 8 0 01-15.656 1.343zM13.956 9.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" clip-rule="evenodd"></path></svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2 text-slate-900">Konsultasi</h3>
-                    <p class="text-slate-600">Layanan konsultasi bisnis perikanan dari para ahli</p>
-                </div>
-                <div class="bg-white p-8 rounded-3xl shadow-lg border border-blue-100 hover:shadow-2xl transition group">
-                    <div class="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-blue-800 transition">
-                        <svg class="w-8 h-8 text-blue-700 group-hover:text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"></path></svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2 text-slate-900">Data & Statistik</h3>
-                    <p class="text-slate-600">Informasi data perikanan yang akurat dan terpercaya</p>
-                </div>
-            </div>
-        </div>
     </section>
 
     <!-- Section Tentang Singkat -->
@@ -184,6 +278,54 @@
         </div>
     </section>
 
+    <!-- Section Galeri Terbaru -->
+    <section class="max-w-7xl mx-auto px-4 py-24">
+        <div class="flex flex-col lg:flex-row justify-between items-end gap-6 mb-12">
+            <div>
+                <h2 class="text-3xl font-bold text-slate-900">Galeri Terbaru</h2>
+                <p class="text-slate-600">Kegiatan dan dokumentasi terkini dari Dinas Perikanan</p>
+            </div>
+            <a href="pages/galeri.html" class="text-blue-900 font-semibold hover:underline">Lihat Semua Galeri →</a>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div class="group cursor-pointer">
+                <div class="aspect-square overflow-hidden rounded-2xl bg-slate-100">
+                    <img src="https://easysyntax.github.io/placeholders/Landscape%201720%20x%201080.svg" alt="Galeri 1" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                </div>
+                <p class="text-sm text-slate-600 mt-2">Kegiatan Sosialisasi Perikanan</p>
+            </div>
+            <div class="group cursor-pointer">
+                <div class="aspect-square overflow-hidden rounded-2xl bg-slate-100">
+                    <img src="https://easysyntax.github.io/placeholders/Landscape%201720%20x%201080.svg" alt="Galeri 2" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                </div>
+                <p class="text-sm text-slate-600 mt-2">Pelatihan Nelayan Modern</p>
+            </div>
+            <div class="group cursor-pointer">
+                <div class="aspect-square overflow-hidden rounded-2xl bg-slate-100">
+                    <img src="https://easysyntax.github.io/placeholders/Landscape%201720%20x%201080.svg" alt="Galeri 3" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                </div>
+                <p class="text-sm text-slate-600 mt-2">Kunjungan Lapangan</p>
+            </div>
+            <div class="group cursor-pointer">
+                <div class="aspect-square overflow-hidden rounded-2xl bg-slate-100">
+                    <img src="https://easysyntax.github.io/placeholders/Landscape%201720%20x%201080.svg" alt="Galeri 4" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                </div>
+                <p class="text-sm text-slate-600 mt-2">Pameran Produk Perikanan</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="bg-blue-900 py-16">
+        <div class="max-w-4xl mx-auto text-center px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Butuh Bantuan atau Informasi Lebih Lanjut?</h2>
+            <p class="text-blue-100 text-lg mb-8">Hubungi kami untuk konsultasi, perizinan, atau informasi lainnya seputar perikanan</p>
+            <a href="pages/kontak.html" class="inline-block px-8 py-4 bg-white text-blue-900 rounded-full text-lg font-semibold hover:bg-blue-50 transition shadow-lg">
+                Hubungi Kami Sekarang
+            </a>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="bg-[#0b172a] text-slate-300 py-10">
         <div class="max-w-7xl mx-auto px-4">
@@ -205,6 +347,60 @@
     </footer>
 
     <script>
+        // Update Date and Time
+        function updateDateTime() {
+            const now = new Date();
+            const options = { 
+                weekday: 'long', 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit'
+            };
+            const dateTimeString = now.toLocaleDateString('id-ID', options);
+            document.getElementById('date-time').textContent = dateTimeString;
+        }
+        
+        updateDateTime();
+        setInterval(updateDateTime, 1000);
+
+        // Hero Slider
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.slide-dot');
+        
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            slides[index].classList.add('active');
+            dots[index].classList.add('active');
+            currentSlide = index;
+        }
+        
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+        
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        }
+        
+        // Auto slide
+        setInterval(nextSlide, 5000);
+        
+        // Event listeners
+        document.getElementById('next-slide').addEventListener('click', nextSlide);
+        document.getElementById('prev-slide').addEventListener('click', prevSlide);
+        
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => showSlide(index));
+        });
+
         // Mobile Menu Toggle
         const btn = document.getElementById('menu-btn');
         btn.addEventListener('click', () => {
@@ -214,9 +410,9 @@
 
         // Dummy News Generator
         const dummyNews = [
-            { title: "Inovasi Teknologi dalam Pengembangan Perikanan Berkelanjutan", date: "15 Apr 2024", img: "assets/images/berita1.jpg" },
-            { title: "Program Pemberdayaan Masyarakat Nelayan dan UMKM Perikanan", date: "14 Apr 2024", img: "assets/images/berita2.jpg" },
-            { title: "Peningkatan Kualitas dan Produktivitas Hasil Tangkapan Laut", date: "13 Apr 2024", img: "assets/images/berita3.jpg" }
+            { title: "Inovasi Teknologi dalam Pengembangan Perikanan Berkelanjutan", date: "15 Apr 2026", img: "assets/images/Berita1.jpg" },
+            { title: "Program Pemberdayaan Masyarakat Nelayan dan UMKM Perikanan", date: "14 Apr 2026", img: "assets/images/Berita2.jpg" },
+            { title: "Peningkatan Kualitas dan Produktivitas Hasil Tangkapan Laut", date: "13 Apr 2026", img: "assets/images/Berita3.jpg" }
         ];
 
         const container = document.getElementById('news-container');
