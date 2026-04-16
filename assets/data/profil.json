@@ -1,0 +1,290 @@
+{
+  "site": {
+    "title": "Dinas Pendidikan Kabupaten Sarmi - Beranda",
+    "language": "id",
+    "timezone": "Asia/Jayapura"
+  },
+  "branding": {
+    "logo": "assets/images/brand/logo.png",
+    "hero_logo": "assets/images/brand/logo.png",
+    "favicon": "assets/images/brand/logo.png"
+  },
+  "client": {
+    "name": "Dinas Pendidikan",
+    "region": "Kabupaten Sarmi",
+    "full_name": "Dinas Pendidikan Kabupaten Sarmi",
+    "tagline": "Mendorong tata kelola Pendidikan yang berkelanjutan, produktif, dan inklusif untuk kesejahteraan masyarakat pesisir."
+  },
+  "contact": {
+    "instagram": "https://www.instagram.com/",
+    "whatsapp": "https://wa.me/6281234567890",
+    "facebook": "https://www.facebook.com/"
+  },
+  "hero": {
+    "autoplay_ms": 5000,
+    "slides": [
+      {
+        "background": "assets/images/hero/contentslides1.png",
+        "badge": "Portal Resmi Pemerintah",
+        "title": "Layanan Informasi Pendidikan Kabupaten Sarmi",
+        "description": "Akses informasi kebijakan, layanan perizinan, dan program pengembangan sektor Pendidikan dalam satu portal.",
+        "primary_cta": {
+          "label": "Jelajahi Layanan",
+          "href": "pages/layanan.html"
+        },
+        "secondary_cta": {
+          "label": "Profil Instansi",
+          "href": "pages/profil.html"
+        },
+        "logo_caption": "Dinas Pendidikan Kabupaten Sarmi"
+      },
+      {
+        "background": "assets/images/hero/contentslides2.png",
+        "badge": "Program Prioritas",
+        "title": "Penguatan Ekonomi Kelautan Berbasis Masyarakat",
+        "description": "Kami mendampingi nelayan, pembudidaya, dan pelaku usaha agar tumbuh melalui pembinaan teknis dan akses informasi yang terbuka.",
+        "primary_cta": {
+          "label": "Lihat Program",
+          "href": "pages/layanan.html#pelatihan-teknis"
+        },
+        "secondary_cta": {
+          "label": "Berita Terbaru",
+          "href": "pages/berita.html"
+        },
+        "logo_caption": "Bersama Masyarakat Pesisir"
+      },
+      {
+        "background": "assets/images/hero/contentslides3.png",
+        "badge": "Kolaborasi Daerah",
+        "title": "Data, Inovasi, dan Kolaborasi untuk Pendidikan Berdaya Saing",
+        "description": "Pengembangan sektor Pendidikan dilakukan melalui layanan publik yang adaptif, transparan, dan berbasis data.",
+        "primary_cta": {
+          "label": "Lihat Statistik",
+          "href": "pages/layanan.html#data-produksi"
+        },
+        "secondary_cta": {
+          "label": "Hubungi Kami",
+          "href": "pages/kontak.html"
+        },
+        "logo_caption": "Pendidikan Maju, Sarmi Sejahtera"
+      }
+    ]
+  },
+  "sections": {
+    "services": {
+      "title": "Layanan Kami",
+      "subtitle": "Rangkaian layanan publik yang dirancang untuk mendukung kebutuhan masyarakat Pendidikan secara terpadu.",
+      "items": [
+        {
+          "icon": "fa-solid fa-file-signature",
+          "title": "Perizinan",
+          "description": "Fasilitasi perizinan usaha, budidaya, dan penangkapan dengan prosedur yang jelas.",
+          "link": "pages/layanan.html#izin-usaha",
+          "link_label": "Lihat Perizinan"
+        },
+        {
+          "icon": "fa-solid fa-fish",
+          "title": "Pendampingan Teknis",
+          "description": "Pembinaan lapangan terkait teknik budidaya, mutu hasil tangkap, dan pengolahan.",
+          "link": "pages/layanan.html#pelatihan-teknis",
+          "link_label": "Lihat Pendampingan"
+        },
+        {
+          "icon": "fa-solid fa-chalkboard-user",
+          "title": "Pelatihan SDM",
+          "description": "Pelatihan berkala untuk peningkatan kompetensi nelayan dan pelaku usaha.",
+          "link": "pages/layanan.html#pelatihan-bisnis",
+          "link_label": "Lihat Pelatihan"
+        },
+        {
+          "icon": "fa-solid fa-chart-column",
+          "title": "Data & Informasi",
+          "description": "Penyediaan data sektor Pendidikan untuk perencanaan dan pengambilan keputusan.",
+          "link": "pages/layanan.html#data-produksi",
+          "link_label": "Lihat Data"
+        }
+      ]
+    },
+    "news": {
+      "title": "Berita Terkini",
+      "subtitle": "Update kegiatan, kebijakan, dan capaian terbaru dari lingkungan Dinas Pendidikan.",
+      "all_label": "Lihat Semua Berita →",
+      "all_href": "pages/berita.html",
+      "items": [
+        {
+          "image": "assets/images/berita/Berita1.png",
+          "date": "12 Januari 2026",
+          "title": "Pelatihan Budidaya Berkelanjutan untuk Kelompok Pembudidaya",
+          "excerpt": "Program pelatihan difokuskan pada teknik budidaya yang efisien dan ramah lingkungan.",
+          "href": "pages/detail.html?id=berita-1",
+          "link_label": "Baca Selengkapnya →"
+        },
+        {
+          "image": "assets/images/berita/Berita2.png",
+          "date": "05 Januari 2026",
+          "title": "Pendampingan UMKM Pengolahan Hasil Pendidikan Pesisir",
+          "excerpt": "Kolaborasi lintas OPD memperkuat daya saing produk olahan Pendidikan lokal.",
+          "href": "pages/detail.html?id=berita-2",
+          "link_label": "Baca Selengkapnya →"
+        },
+        {
+          "image": "assets/images/berita/Berita3.png",
+          "date": "28 Desember 2025",
+          "title": "Monitoring Produksi Tahunan Pendidikan Tangkap Kabupaten",
+          "excerpt": "Rekap data produksi disusun sebagai bahan evaluasi serta perencanaan program tahun berjalan.",
+          "href": "pages/detail.html?id=berita-3",
+          "link_label": "Baca Selengkapnya →"
+        }
+      ]
+    },
+    "about": {
+      "title": "Tentang Dinas Pendidikan",
+      "paragraphs": [
+        "Dinas Pendidikan Kabupaten Sarmi berperan dalam perumusan kebijakan, pelaksanaan layanan, serta pemberdayaan masyarakat di sektor Pendidikan.",
+        "Melalui pendekatan kolaboratif, kami memastikan program yang dijalankan relevan dengan kebutuhan nelayan, pembudidaya, dan pelaku usaha lokal."
+      ],
+      "primary_cta": {
+        "label": "Selengkapnya",
+        "href": "pages/profil.html"
+      },
+      "secondary_cta": {
+        "label": "Layanan Kami",
+        "href": "pages/layanan.html"
+      },
+      "highlights": [
+        {
+          "icon": "fa-solid fa-bullseye",
+          "title": "Visi Pelayanan",
+          "description": "Mewujudkan sektor Pendidikan daerah yang maju, berdaya saing, dan berkelanjutan."
+        },
+        {
+          "icon": "fa-solid fa-people-group",
+          "title": "Pemberdayaan Masyarakat",
+          "description": "Pendampingan berkelanjutan untuk penguatan ekonomi keluarga pesisir."
+        },
+        {
+          "icon": "fa-solid fa-shield-halved",
+          "title": "Tata Kelola Transparan",
+          "description": "Layanan publik berbasis data dan akuntabilitas untuk peningkatan mutu kinerja."
+        }
+      ]
+    },
+    "gallery": {
+      "title": "Galeri Terbaru",
+      "subtitle": "Dokumentasi kegiatan lapangan, pelatihan, dan kolaborasi bersama masyarakat.",
+      "all_label": "Lihat Semua Galeri →",
+      "all_href": "pages/galeri.html",
+      "items": [
+        {
+          "image": "assets/images/galeri/gambar1.png",
+          "title": "Pembinaan Kelompok Nelayan",
+          "total": 24,
+          "total_label": "Foto",
+          "href": "pages/galeri.html#album-1",
+          "link_label": "Lihat Album"
+        },
+        {
+          "image": "assets/images/galeri/gambar2.png",
+          "title": "Pelatihan Budidaya Ikan",
+          "total": 18,
+          "total_label": "Foto",
+          "href": "pages/galeri.html#album-2",
+          "link_label": "Lihat Album"
+        },
+        {
+          "image": "assets/images/galeri/gambar3.png",
+          "title": "Monitoring Sentra Produksi",
+          "total": 15,
+          "total_label": "Foto",
+          "href": "pages/galeri.html#album-3",
+          "link_label": "Lihat Album"
+        },
+        {
+          "image": "assets/images/galeri/gambar4.png",
+          "title": "Sinergi Program Daerah",
+          "total": 20,
+          "total_label": "Foto",
+          "href": "pages/galeri.html#album-4",
+          "link_label": "Lihat Album"
+        }
+      ]
+    },
+    "cta": {
+      "title": "Butuh Bantuan atau Informasi Lebih Lanjut?",
+      "subtitle": "Tim kami siap membantu Anda memperoleh informasi, layanan, dan pendampingan sesuai kebutuhan.",
+      "button": {
+        "label": "Hubungi Kami Sekarang",
+        "href": "pages/kontak.html"
+      }
+    }
+  },
+  "footer": {
+    "organization_name": "Dinas Pendidikan Kabupaten Sarmi",
+    "tagline": "Portal informasi resmi untuk layanan Pendidikan yang terbuka, adaptif, dan berpihak pada masyarakat.",
+    "menus": {
+      "navigation": [
+        {
+          "label": "Beranda",
+          "href": "index.html"
+        },
+        {
+          "label": "Profil",
+          "href": "pages/profil.html"
+        },
+        {
+          "label": "Layanan",
+          "href": "pages/layanan.html"
+        },
+        {
+          "label": "Berita",
+          "href": "pages/berita.html"
+        },
+        {
+          "label": "Galeri",
+          "href": "pages/galeri.html"
+        }
+      ],
+      "public_info": [
+        {
+          "label": "Disclaimer",
+          "href": "pages/disclaimer.html"
+        },
+        {
+          "label": "Sitemap",
+          "href": "pages/sitemap.html"
+        },
+        {
+          "label": "FAQ",
+          "href": "pages/faq.html"
+        },
+        {
+          "label": "Kontak",
+          "href": "pages/kontak.html"
+        }
+      ],
+      "quick_services": [
+        {
+          "label": "Izin Usaha",
+          "href": "pages/layanan.html#izin-usaha"
+        },
+        {
+          "label": "Pelatihan Teknis",
+          "href": "pages/layanan.html#pelatihan-teknis"
+        },
+        {
+          "label": "Konsultasi",
+          "href": "pages/layanan.html#konsultasi-bisnis"
+        },
+        {
+          "label": "Data Produksi",
+          "href": "pages/layanan.html#data-produksi"
+        }
+      ]
+    },
+    "copyright": "© 2026 Dinas Pendidikan Kabupaten Sarmi. Seluruh hak cipta dilindungi.",
+    "powered_by": {
+      "label": "Powered by Nokensoft.com",
+      "href": "https://nokensoft.com"
+    }
+  }
+}

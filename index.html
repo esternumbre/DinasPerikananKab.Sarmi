@@ -3,28 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dinas Perikanan - Beranda</title>
-    <link rel="icon" type="image/png" href="assets/images/brand/logoAI.png">
-    <link rel="shortcut icon" type="image/png" href="assets/images/brand/logoAI.png">
+    <title data-bind-text="site.title">Portal Instansi - Beranda</title>
+    <link id="favicon-main" rel="icon" type="image/png" href="assets/images/brand/logoAI.png">
+    <link id="favicon-shortcut" rel="shortcut icon" type="image/png" href="assets/images/brand/logoAI.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="bg-[#f8f4ed] text-slate-900">
-    <div class="fixed top-0 w-full bg-blue-900 text-white py-2 z-40">
+    <div class="fixed top-0 w-full bg-blue-900 text-white py-1.5 z-40">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center text-sm">
                 <div id="date-time" class="font-medium"></div>
                 <div class="flex space-x-4">
-                    <a href="https://instagram.com" target="_blank" rel="noreferrer" class="hover:text-blue-200 transition">
-                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm0 1.5A4.25 4.25 0 003.5 7.75v8.5A4.25 4.25 0 007.75 20.5h8.5A4.25 4.25 0 0020.5 16.25v-8.5A4.25 4.25 0 0016.25 3.5h-8.5z"></path><path d="M12 7.25a4.75 4.75 0 110 9.5 4.75 4.75 0 010-9.5zm0 1.5a3.25 3.25 0 100 6.5 3.25 3.25 0 000-6.5zm4.75-.9a1.1 1.1 0 110 2.2 1.1 1.1 0 010-2.2z"></path></svg>
+                    <a data-bind-href="contact.instagram" href="https://instagram.com" target="_blank" rel="noreferrer" class="hover:text-blue-200 transition">
+                        <i class="fa-brands fa-instagram text-lg"></i>
                     </a>
-                    <a href="https://wa.me/6281234567890" target="_blank" rel="noreferrer" class="hover:text-blue-200 transition">
-                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.966-.273-.099-.472-.148-.672.149-.198.297-.768.966-.94 1.164-.173.198-.346.223-.644.075-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.075-.149-.672-1.612-.921-2.207-.242-.579-.487-.5-.672-.51l-.573-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.064 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.262.489 1.694.626.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.174-1.414-.074-.124-.272-.198-.57-.347z"></path><path d="M12 2C6.486 2 2 6.485 2 12.001a9.91 9.91 0 001.495 5.02L2 22l4.955-1.302A9.93 9.93 0 0012 22.001c5.514 0 10-4.486 10-10.001S17.514 2 12 2z"></path></svg>
+                    <a data-bind-href="contact.whatsapp" href="https://wa.me/6281234567890" target="_blank" rel="noreferrer" class="hover:text-blue-200 transition">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
                     </a>
-                    <a href="https://facebook.com" target="_blank" rel="noreferrer" class="hover:text-blue-200 transition">
-                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 3h-2.5c-2.485 0-3 1.515-3 3.5V9H5v3h3v9h3v-9h3.75l.5-3H11V6.5c0-.425.075-.5.5-.5h1.5V3z"></path></svg>
+                    <a data-bind-href="contact.facebook" href="https://facebook.com" target="_blank" rel="noreferrer" class="hover:text-blue-200 transition">
+                        <i class="fa-brands fa-facebook-f text-lg"></i>
                     </a>
                 </div>
             </div>
@@ -34,20 +35,77 @@
     <nav class="fixed top-8 w-full z-50 glass border-b border-blue-200/40 shadow-sm shadow-slate-200/10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-20 items-center">
-                <div class="flex items-center gap-3">
-                    <img src="assets/images/brand/logo.png" alt="Logo Dinas Perikanan" class="h-12 w-12 object-contain">
-                    <span class="font-bold text-xl tracking-tight text-slate-900">Dinas Perikanan<span class="text-blue-700"> Kabupaten Sarmi</span></span>
-                </div>
+                <a href="index.html" class="flex items-center gap-3 hover:opacity-90 transition" aria-label="Kembali ke beranda">
+                    <img data-bind-src="branding.logo" data-bind-alt="client.full_name" src="assets/images/brand/logo.png" alt="Logo" class="h-12 w-12 object-contain">
+                    <span class="font-bold text-xl tracking-tight text-slate-900">
+                        <span data-bind-text="client.name">Nama Instansi</span>
+                        <span class="text-blue-700">
+                            <span data-bind-text="client.region">Wilayah</span>
+                        </span>
+                    </span>
+                </a>
                 <div class="hidden md:flex space-x-8 font-medium text-slate-700 relative">
                     <a href="index.html" class="text-blue-800">Beranda</a>
-                    <a href="pages/profil.html" class="hover:text-blue-900 transition">Profil</a>
-                    <a href="pages/layanan.html" class="hover:text-blue-900 transition">Layanan</a>
+                    <div class="relative group">
+                        <a href="pages/profil.html" class="hover:text-blue-900 transition flex items-center gap-2">
+                            Profil
+                            <i class="fa-solid fa-chevron-down text-[11px]"></i>
+                        </a>
+                        <div class="absolute left-0 top-full mt-3 w-52 rounded-xl bg-white shadow-xl border border-slate-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                            <a href="pages/profil.html#visi-misi" class="block px-4 py-2.5 text-sm hover:bg-blue-50 rounded-t-xl">Visi & Misi</a>
+                            <a href="pages/profil.html#struktur" class="block px-4 py-2.5 text-sm hover:bg-blue-50">Struktur Organisasi</a>
+                            <a href="pages/profil.html#sejarah" class="block px-4 py-2.5 text-sm hover:bg-blue-50 rounded-b-xl">Sejarah</a>
+                        </div>
+                    </div>
+                    <div class="relative group">
+                        <a href="pages/layanan.html" class="hover:text-blue-900 transition flex items-center gap-2">
+                            Layanan
+                            <i class="fa-solid fa-chevron-down text-[11px]"></i>
+                        </a>
+                        <div class="absolute left-1/2 -translate-x-1/2 top-full mt-3 w-[700px] rounded-2xl bg-white shadow-2xl border border-slate-200 p-6 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                            <div class="grid grid-cols-2 gap-6">
+                                <div>
+                                    <h4 class="font-semibold text-slate-900 mb-2">Perizinan</h4>
+                                    <div class="space-y-1.5 text-sm text-slate-600">
+                                        <a href="pages/layanan.html#izin-usaha" class="block hover:text-blue-700">Izin Usaha Perikanan</a>
+                                        <a href="pages/layanan.html#izin-tangkap" class="block hover:text-blue-700">Izin Penangkapan</a>
+                                        <a href="pages/layanan.html#izin-budidaya" class="block hover:text-blue-700">Izin Budidaya</a>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-slate-900 mb-2">Pelatihan</h4>
+                                    <div class="space-y-1.5 text-sm text-slate-600">
+                                        <a href="pages/layanan.html#pelatihan-teknis" class="block hover:text-blue-700">Pelatihan Teknis</a>
+                                        <a href="pages/layanan.html#pelatihan-bisnis" class="block hover:text-blue-700">Pelatihan Bisnis</a>
+                                        <a href="pages/layanan.html#pelatihan-keselamatan" class="block hover:text-blue-700">Pelatihan Keselamatan</a>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-slate-900 mb-2">Konsultasi</h4>
+                                    <div class="space-y-1.5 text-sm text-slate-600">
+                                        <a href="pages/layanan.html#konsultasi-bisnis" class="block hover:text-blue-700">Konsultasi Bisnis</a>
+                                        <a href="pages/layanan.html#konsultasi-teknologi" class="block hover:text-blue-700">Konsultasi Teknologi</a>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-slate-900 mb-2">Data & Statistik</h4>
+                                    <div class="space-y-1.5 text-sm text-slate-600">
+                                        <a href="pages/layanan.html#data-produksi" class="block hover:text-blue-700">Data Produksi</a>
+                                        <a href="pages/layanan.html#statistik-pasar" class="block hover:text-blue-700">Statistik Pasar</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <a href="pages/berita.html" class="hover:text-blue-900 transition">Berita</a>
                     <a href="pages/galeri.html" class="hover:text-blue-900 transition">Galeri</a>
-                    <a href="pages/kontak.html" class="px-5 py-2 bg-blue-900 text-white rounded-full shadow-lg shadow-blue-900/20 hover:bg-blue-800 transition">Kontak</a>
+                    <a href="pages/kontak.html" class="inline-flex items-center gap-2 px-5 py-2 bg-blue-900 text-white rounded-full shadow-lg shadow-blue-900/20 hover:bg-blue-800 transition">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>Kontak</span>
+                    </a>
                 </div>
                 <button id="menu-btn" class="md:hidden p-2 rounded-lg hover:bg-blue-100 transition" aria-label="Buka menu">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                    <i class="fa-solid fa-bars text-xl"></i>
                 </button>
             </div>
             <div id="mobile-menu" class="md:hidden hidden pb-4 border-t border-blue-200/40 mt-2 pt-4">
@@ -63,190 +121,72 @@
         </div>
     </nav>
 
-    <section class="relative w-full min-h-[550px] overflow-hidden pt-28">
-        <div id="hero-slider" class="relative w-full h-[550px]">
-            <div class="slide active absolute inset-0 bg-cover bg-center" style="background-image: url('assets/images/hero/contentslides3.png');">
-                <div class="absolute inset-0 bg-gradient-to-b from-blue-900/50 via-blue-950/60 to-slate-950/75"></div>
-                <div class="absolute inset-0 bg-gradient-to-r from-black/20 to-transparent"></div>
-                <div class="relative z-20 flex items-center justify-center h-full px-4">
-                    <div class="text-center space-y-8 max-w-4xl">
-                        <h1 class="text-5xl md:text-7xl font-black text-white drop-shadow-lg">PENGEMBANGAN <br> PERIKANAN BERKELANJUTAN</h1>
-                        <p class="text-xl md:text-2xl text-white/90 drop-shadow-lg">Mendorong inovasi dan teknologi untuk masa depan perikanan yang lebih baik</p>
-                        <a href="pages/layanan.html" class="inline-block px-8 py-4 bg-blue-600 text-white rounded-full text-lg font-semibold hover:bg-blue-700 transition shadow-lg">Pelajari Lebih Lanjut</a>
-                    </div>
-                </div>
-            </div>
-            <div class="slide absolute inset-0 bg-cover bg-center" style="background-image: url('assets/images/hero/contentslides2.png');">
-                <div class="absolute inset-0 bg-gradient-to-b from-blue-900/50 via-blue-950/60 to-slate-950/75"></div>
-                <div class="absolute inset-0 bg-gradient-to-r from-black/20 to-transparent"></div>
-                <div class="relative z-20 flex items-center justify-center h-full px-4">
-                    <div class="text-center space-y-8 max-w-4xl">
-                        <h1 class="text-5xl md:text-7xl font-black text-white drop-shadow-lg">PEMBERDAYAAN <br> NELAYAN LOKAL</h1>
-                        <p class="text-xl md:text-2xl text-white/90 drop-shadow-lg">Memberikan pelatihan dan dukungan untuk meningkatkan kesejahteraan nelayan</p>
-                        <a href="pages/profil.html" class="inline-block px-8 py-4 bg-green-600 text-white rounded-full text-lg font-semibold hover:bg-green-700 transition shadow-lg">Lihat Program Kami</a>
-                    </div>
-                </div>
-            </div>
-            <div class="slide absolute inset-0 bg-cover bg-center" style="background-image: url('assets/images/hero/contentslides1.png');">
-                <div class="absolute inset-0 bg-gradient-to-b from-blue-900/50 via-blue-950/60 to-slate-950/75"></div>
-                <div class="absolute inset-0 bg-gradient-to-r from-black/20 to-transparent"></div>
-                <div class="relative z-20 flex items-center justify-center h-full px-4">
-                    <div class="text-center space-y-8 max-w-4xl">
-                        <h1 class="text-5xl md:text-7xl font-black text-white drop-shadow-lg">KONSERVASI <br> SUMBER DAYA LAUT</h1>
-                        <p class="text-xl md:text-2xl text-white/90 drop-shadow-lg">Melindungi ekosistem laut untuk generasi mendatang</p>
-                        <a href="pages/berita.html" class="inline-block px-8 py-4 bg-teal-600 text-white rounded-full text-lg font-semibold hover:bg-teal-700 transition shadow-lg">Baca Berita Terbaru</a>
-                    </div>
-                </div>
-            </div>
+    <section class="relative w-full min-h-screen overflow-hidden pt-28">
+        <div id="hero-slider" class="relative w-full h-[calc(100vh-7rem)] min-h-[550px]">
+            <div id="hero-slides" class="relative w-full h-full"></div>
         </div>
         <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-2 z-30">
             <button id="prev-slide" class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                <i class="fa-solid fa-chevron-left"></i>
             </button>
-            <div class="flex space-x-2">
-                <button class="slide-dot w-3 h-3 bg-white/50 rounded-full active" data-slide="0"></button>
-                <button class="slide-dot w-3 h-3 bg-white/50 rounded-full" data-slide="1"></button>
-                <button class="slide-dot w-3 h-3 bg-white/50 rounded-full" data-slide="2"></button>
-            </div>
+            <div id="hero-dots" class="flex space-x-2"></div>
             <button id="next-slide" class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                <i class="fa-solid fa-chevron-right"></i>
             </button>
         </div>
     </section>
 
-    <section class="max-w-7xl mx-auto px-4 -mt-10 bg-[#f8f4ed] pt-20 pb-12 rounded-3xl shadow-inner shadow-slate-200/80" x-data='{
-        "services": [
-            { "icon": "📄", "title": "Perizinan", "description": "Proses perizinan usaha perikanan yang mudah dan transparan." },
-            { "icon": "🎓", "title": "Pelatihan", "description": "Program pelatihan untuk meningkatkan kompetensi nelayan." },
-            { "icon": "💬", "title": "Konsultasi", "description": "Layanan konsultasi bisnis perikanan dari para ahli." },
-            { "icon": "📊", "title": "Data & Statistik", "description": "Informasi data perikanan yang akurat dan terpercaya." }
-        ]
-    }'>
+    <section class="section-variant section-layanan max-w-7xl mx-auto px-6 md:px-8 lg:px-10 mt-12 py-24">
         <div class="text-center mb-16">
-            <h2 class="text-4xl font-bold text-slate-900 mb-4">Layanan Kami</h2>
-            <p class="text-slate-600 text-lg">Kami menyediakan berbagai layanan untuk mendukung industri perikanan</p>
+            <h2 id="services-title" class="text-4xl font-bold text-slate-900 mb-4">Layanan Kami</h2>
+            <p id="services-subtitle" class="text-slate-600 text-lg"></p>
         </div>
-        <div class="grid md:grid-cols-4 gap-6">
-            <template x-for="service in services" :key="service.title">
-                <article class="interactive-card bg-white p-8 rounded-3xl shadow-lg border border-blue-100 hover:shadow-2xl transition group">
-                    <div class="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-blue-800 transition">
-                        <span class="text-3xl group-hover:scale-110 transition-transform" x-text="service.icon"></span>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2 text-slate-900" x-text="service.title"></h3>
-                    <p class="text-slate-600" x-text="service.description"></p>
-                </article>
-            </template>
-        </div>
+        <div id="services-grid" class="grid md:grid-cols-4 gap-6"></div>
     </section>
 
-    <section class="max-w-7xl mx-auto px-4 py-24" x-data='{
-        "newsItems": [
-            { "title": "Inovasi Teknologi dalam Pengembangan Perikanan Berkelanjutan", "date": "15 Apr 2026", "img": "assets/images/berita/Berita1.png" },
-            { "title": "Program Pemberdayaan Masyarakat Nelayan dan UMKM Perikanan", "date": "14 Apr 2026", "img": "assets/images/berita/Berita2.png" },
-            { "title": "Peningkatan Kualitas dan Produktivitas Hasil Tangkapan Laut", "date": "13 Apr 2026", "img": "assets/images/berita/Berita3.png" }
-        ]
-    }'>
+    <section class="section-variant section-berita max-w-7xl mx-auto px-6 md:px-8 lg:px-10 py-24 mt-12">
         <div class="flex flex-col lg:flex-row justify-between items-end gap-6 mb-12">
             <div>
-                <h2 class="text-3xl font-bold text-slate-900">Berita Terkini</h2>
-                <p class="text-slate-600">Informasi terbaru seputar dunia perikanan</p>
+                <h2 id="news-title" class="text-3xl font-bold text-slate-900">Berita Terkini</h2>
+                <p id="news-subtitle" class="text-slate-600"></p>
             </div>
-            <a href="pages/berita.html" class="text-blue-900 font-semibold hover:underline">Lihat Semua Berita →</a>
+            <a id="news-all-link" href="pages/berita.html" class="text-blue-900 font-semibold hover:underline">Lihat Semua Berita →</a>
         </div>
-        <div class="grid md:grid-cols-3 gap-8">
-            <template x-for="news in newsItems" :key="news.title">
-                <article class="interactive-card bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100 hover:shadow-xl transition">
-                    <div class="w-full" style="aspect-ratio: 4/3; overflow: hidden; background: #f1f5f9;">
-                        <img :src="news.img" :alt="news.title" class="w-full h-full object-contain">
-                    </div>
-                    <div class="p-6">
-                        <p class="text-sm text-blue-600 font-semibold mb-2" x-text="news.date"></p>
-                        <h4 class="text-xl font-bold mb-4 leading-snug hover:text-blue-600 transition" x-text="news.title"></h4>
-                        <a href="pages/detail.html" class="text-slate-500 font-medium hover:text-blue-600">Baca Selengkapnya</a>
-                    </div>
-                </article>
-            </template>
-        </div>
+        <div id="news-grid" class="grid md:grid-cols-3 gap-8"></div>
     </section>
 
-    <section class="max-w-7xl mx-auto px-4 py-24">
+    <section class="section-variant section-tentang max-w-7xl mx-auto px-6 md:px-8 lg:px-10 py-24 mt-12">
         <div class="grid md:grid-cols-2 gap-12 items-center">
             <div>
-                <h2 class="text-4xl font-bold text-slate-900 mb-6">Tentang Dinas Perikanan Kabupaten Sarmi</h2>
-                <p class="text-slate-600 text-lg mb-4">Dinas Perikanan Kabupaten Sarmi adalah lembaga pemerintah yang berkomitmen untuk mengembangkan sektor perikanan secara berkelanjutan. Kami bekerja untuk meningkatkan kesejahteraan masyarakat nelayan dan pengusaha perikanan.</p>
-                <p class="text-slate-600 text-lg mb-8">Dengan sumber daya laut yang melimpah, kami terus berinovasi dalam pengelolaan dan pengembangan potensi perikanan untuk ekonomi yang lebih kuat.</p>
-                <div class="flex flex-wrap gap-4">
-                    <a href="pages/profil.html" class="inline-block px-8 py-3 bg-blue-900 text-white rounded-lg hover:bg-blue-800 transition font-semibold">Selengkapnya</a>
-                    <a href="pages/layanan.html" class="inline-block px-8 py-3 border-2 border-blue-900 text-blue-900 rounded-lg hover:bg-blue-900 hover:text-white transition font-semibold">Layanan Kami</a>
+                <h2 id="about-title" class="text-4xl font-bold text-slate-900 mb-6">Tentang Instansi</h2>
+                <div id="about-paragraphs" class="space-y-4"></div>
+                <div class="flex flex-wrap gap-4 mt-8">
+                    <a id="about-primary-cta" href="pages/profil.html" class="inline-block px-8 py-3 bg-blue-900 text-white rounded-lg hover:bg-blue-800 transition font-semibold">Selengkapnya</a>
+                    <a id="about-secondary-cta" href="pages/layanan.html" class="inline-block px-8 py-3 border-2 border-blue-900 text-blue-900 rounded-lg hover:bg-blue-900 hover:text-white transition font-semibold">Layanan Kami</a>
                 </div>
             </div>
             <div class="bg-gradient-to-br from-blue-700 via-blue-800 to-blue-950 rounded-3xl p-8 text-white shadow-2xl interactive-card">
-                <div class="space-y-6">
-                    <div class="flex items-start gap-4">
-                        <div class="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-                        </div>
-                        <div>
-                            <h4 class="font-bold mb-1">Profesional & Terpercaya</h4>
-                            <p class="text-sm text-white/80">Tim profesional berpengalaman di bidang perikanan.</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start gap-4">
-                        <div class="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-                        </div>
-                        <div>
-                            <h4 class="font-bold mb-1">Inovasi Berkelanjutan</h4>
-                            <p class="text-sm text-white/80">Selalu mengembangkan solusi terbaik untuk perikanan.</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start gap-4">
-                        <div class="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-                        </div>
-                        <div>
-                            <h4 class="font-bold mb-1">Responsif terhadap Masyarakat</h4>
-                            <p class="text-sm text-white/80">Siap melayani kebutuhan nelayan dan pelaku usaha.</p>
-                        </div>
-                    </div>
-                </div>
+                <div id="about-highlights" class="space-y-6"></div>
             </div>
         </div>
     </section>
 
-    <section class="max-w-7xl mx-auto px-4 py-24" x-data='{
-        "albums": [
-            { "title": "Sosialisasi Program Pengembangan Perikanan Berkelanjutan", "img": "assets/images/galeri/gambar1.png", "totalFoto": 18 },
-            { "title": "Pelatihan Teknologi Penangkapan Ikan Modern", "img": "assets/images/galeri/gambar2.png", "totalFoto": 24 },
-            { "title": "Kunjungan Lapangan Budidaya Ikan", "img": "assets/images/galeri/gambar4.png", "totalFoto": 16 },
-            { "title": "Penyerahan Bantuan Alat Tangkap", "img": "assets/images/galeri/gambar3.png", "totalFoto": 21 }
-        ]
-    }'>
+    <section class="section-variant section-galeri max-w-7xl mx-auto px-6 md:px-8 lg:px-10 py-24 mt-12 mb-16">
         <div class="flex flex-col lg:flex-row justify-between items-end gap-6 mb-12">
             <div>
-                <h2 class="text-3xl font-bold text-slate-900">Galeri Terbaru</h2>
-                <p class="text-slate-600">Kegiatan dan dokumentasi terkini dari Dinas Perikanan</p>
+                <h2 id="gallery-title" class="text-3xl font-bold text-slate-900">Galeri Terbaru</h2>
+                <p id="gallery-subtitle" class="text-slate-600"></p>
             </div>
-            <a href="pages/galeri.html" class="text-blue-900 font-semibold hover:underline">Lihat Semua Galeri →</a>
+            <a id="gallery-all-link" href="pages/galeri.html" class="text-blue-900 font-semibold hover:underline">Lihat Semua Galeri →</a>
         </div>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <template x-for="album in albums" :key="album.title">
-                <article class="group interactive-card">
-                    <div class="relative overflow-hidden rounded-2xl bg-slate-100" style="aspect-ratio: 4 / 5;">
-                        <img :src="album.img" :alt="album.title" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
-                        <span class="absolute top-3 right-3 bg-black/70 text-white text-xs font-semibold px-2.5 py-1 rounded-full" x-text="album.totalFoto + ' foto'"></span>
-                    </div>
-                    <p class="text-sm text-slate-600 mt-2" x-text="album.title"></p>
-                </article>
-            </template>
-        </div>
+        <div id="gallery-grid" class="grid grid-cols-2 md:grid-cols-4 gap-6"></div>
     </section>
 
     <section class="bg-blue-900 py-16">
         <div class="max-w-4xl mx-auto text-center px-4">
-            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Butuh Bantuan atau Informasi Lebih Lanjut?</h2>
-            <p class="text-blue-100 text-lg mb-8">Hubungi kami untuk konsultasi, perizinan, atau informasi lainnya seputar perikanan</p>
-            <a href="pages/kontak.html" class="inline-block px-8 py-4 bg-white text-blue-900 rounded-full text-lg font-semibold hover:bg-blue-50 transition shadow-lg">Hubungi Kami Sekarang</a>
+            <h2 id="cta-title" class="text-3xl md:text-4xl font-bold text-white mb-4">Butuh Bantuan atau Informasi Lebih Lanjut?</h2>
+            <p id="cta-subtitle" class="text-blue-100 text-lg mb-8"></p>
+            <a id="cta-button" href="pages/kontak.html" class="inline-block px-8 py-4 bg-white text-blue-900 rounded-full text-lg font-semibold hover:bg-blue-50 transition shadow-lg">Hubungi Kami Sekarang</a>
         </div>
     </section>
 
@@ -255,55 +195,38 @@
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10 pb-10 border-b border-white/10">
                 <div>
                     <div class="flex items-center gap-3 mb-4">
-                        <img src="assets/images/brand/logo.png" alt="Logo Dinas Perikanan" class="h-11 w-11 object-contain">
-                        <h3 class="font-bold text-white">Dinas Perikanan Kab. Sarmi</h3>
+                        <img data-bind-src="branding.logo" data-bind-alt="client.full_name" src="assets/images/brand/logo.png" alt="Logo" class="h-11 w-11 object-contain">
+                        <h3 id="footer-org-name" class="font-bold text-white">Nama Instansi</h3>
                     </div>
-                    <p class="text-sm text-slate-400 leading-relaxed">Mendukung pengembangan sektor perikanan berkelanjutan demi kesejahteraan masyarakat pesisir dan nelayan lokal.</p>
+                    <p id="footer-tagline" class="text-sm text-slate-400 leading-relaxed"></p>
                     <div class="flex items-center gap-3 mt-5">
-                        <a href="https://instagram.com" target="_blank" rel="noreferrer" class="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20 transition">
-                            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm0 1.5A4.25 4.25 0 003.5 7.75v8.5A4.25 4.25 0 007.75 20.5h8.5A4.25 4.25 0 0020.5 16.25v-8.5A4.25 4.25 0 0016.25 3.5h-8.5z"></path><path d="M12 7.25a4.75 4.75 0 110 9.5 4.75 4.75 0 010-9.5zm0 1.5a3.25 3.25 0 100 6.5 3.25 3.25 0 000-6.5zm4.75-.9a1.1 1.1 0 110 2.2 1.1 1.1 0 010-2.2z"></path></svg>
+                        <a data-bind-href="contact.instagram" href="https://instagram.com" target="_blank" rel="noreferrer" class="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20 transition">
+                            <i class="fa-brands fa-instagram"></i>
                         </a>
-                        <a href="https://wa.me/6281234567890" target="_blank" rel="noreferrer" class="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20 transition">
-                            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.966-.273-.099-.472-.148-.672.149-.198.297-.768.966-.94 1.164-.173.198-.346.223-.644.075-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.075-.149-.672-1.612-.921-2.207-.242-.579-.487-.5-.672-.51l-.573-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.064 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.262.489 1.694.626.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.174-1.414-.074-.124-.272-.198-.57-.347z"></path><path d="M12 2C6.486 2 2 6.485 2 12.001a9.91 9.91 0 001.495 5.02L2 22l4.955-1.302A9.93 9.93 0 0012 22.001c5.514 0 10-4.486 10-10.001S17.514 2 12 2z"></path></svg>
+                        <a data-bind-href="contact.whatsapp" href="https://wa.me/6281234567890" target="_blank" rel="noreferrer" class="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20 transition">
+                            <i class="fa-brands fa-whatsapp"></i>
                         </a>
-                        <a href="https://facebook.com" target="_blank" rel="noreferrer" class="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20 transition">
-                            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 3h-2.5c-2.485 0-3 1.515-3 3.5V9H5v3h3v9h3v-9h3.75l.5-3H11V6.5c0-.425.075-.5.5-.5h1.5V3z"></path></svg>
+                        <a data-bind-href="contact.facebook" href="https://facebook.com" target="_blank" rel="noreferrer" class="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20 transition">
+                            <i class="fa-brands fa-facebook-f"></i>
                         </a>
                     </div>
                 </div>
                 <div>
                     <h4 class="font-semibold text-white mb-4">Navigasi</h4>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="index.html" class="hover:text-white transition">Beranda</a></li>
-                        <li><a href="pages/profil.html" class="hover:text-white transition">Profil</a></li>
-                        <li><a href="pages/layanan.html" class="hover:text-white transition">Layanan</a></li>
-                        <li><a href="pages/berita.html" class="hover:text-white transition">Berita</a></li>
-                        <li><a href="pages/galeri.html" class="hover:text-white transition">Galeri</a></li>
-                        <li><a href="pages/kontak.html" class="hover:text-white transition">Kontak</a></li>
-                    </ul>
+                    <ul id="footer-nav-menu" class="space-y-2 text-sm"></ul>
                 </div>
                 <div>
                     <h4 class="font-semibold text-white mb-4">Informasi Publik</h4>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="pages/disclaimer.html" class="hover:text-white transition">Disclaimer</a></li>
-                        <li><a href="pages/sitemap.html" class="hover:text-white transition">Site Map</a></li>
-                        <li><a href="pages/faq.html" class="hover:text-white transition">FAQ</a></li>
-                        <li><a href="pages/detail.html" class="hover:text-white transition">Detail Berita</a></li>
-                    </ul>
+                    <ul id="footer-public-menu" class="space-y-2 text-sm"></ul>
                 </div>
                 <div>
                     <h4 class="font-semibold text-white mb-4">Layanan Cepat</h4>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="pages/layanan.html#izin-usaha" class="hover:text-white transition">Perizinan Usaha</a></li>
-                        <li><a href="pages/layanan.html#pelatihan-teknis" class="hover:text-white transition">Pelatihan Teknis</a></li>
-                        <li><a href="pages/layanan.html#konsultasi-bisnis" class="hover:text-white transition">Konsultasi Bisnis</a></li>
-                        <li><a href="pages/layanan.html#data-produksi" class="hover:text-white transition">Data Produksi</a></li>
-                    </ul>
+                    <ul id="footer-service-menu" class="space-y-2 text-sm"></ul>
                 </div>
             </div>
             <div class="pt-6 flex flex-col md:flex-row items-center justify-between gap-3 text-sm">
-                <p class="text-slate-400">&copy; 2026 Prototype Dinas Perikanan Kab. Sarmi.</p>
-                <a href="https://nokensoft.com" target="_blank" rel="noopener noreferrer" class="text-slate-300 hover:text-white transition font-medium">Powered by Nokensoft.com</a>
+                <p id="footer-copyright" class="text-slate-400"></p>
+                <a id="footer-powered-link" href="https://nokensoft.com" target="_blank" rel="noopener noreferrer" class="text-slate-300 hover:text-white transition font-medium">Powered by Nokensoft.com</a>
             </div>
         </div>
     </footer>

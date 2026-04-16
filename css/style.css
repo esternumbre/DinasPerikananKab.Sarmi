@@ -36,3 +36,69 @@ button,
 .interactive-card:hover {
     transform: translateY(-2px);
 }
+
+.section-variant {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    border-radius: 1.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    box-shadow: 0 20px 45px -30px rgba(15, 23, 42, 0.35);
+    --surface-start: rgba(255, 255, 255, 0.58);
+    --surface-end: rgba(241, 245, 249, 0.78);
+    --glow-color: rgba(59, 130, 246, 0.24);
+    background: linear-gradient(130deg, var(--surface-start), var(--surface-end));
+}
+
+.section-variant::before {
+    content: "";
+    position: absolute;
+    inset: -35% -20%;
+    background: radial-gradient(circle at 20% 20%, var(--glow-color), transparent 60%);
+    z-index: 0;
+}
+
+.section-variant::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+        radial-gradient(circle at 20% 25%, rgba(255, 255, 255, 0.22) 0 1px, transparent 1px),
+        radial-gradient(circle at 80% 70%, rgba(15, 23, 42, 0.12) 0 1px, transparent 1px),
+        radial-gradient(circle at 40% 80%, rgba(255, 255, 255, 0.16) 0 1px, transparent 1px);
+    background-size: 11px 11px, 13px 13px, 9px 9px;
+    opacity: 0.34;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.section-variant > * {
+    position: relative;
+    z-index: 2;
+}
+
+.section-layanan {
+    --surface-start: rgba(219, 234, 254, 0.62);
+    --surface-end: rgba(240, 249, 255, 0.82);
+    --glow-color: rgba(37, 99, 235, 0.28);
+}
+
+.section-berita {
+    --surface-start: rgba(255, 247, 237, 0.62);
+    --surface-end: rgba(239, 246, 255, 0.8);
+    --glow-color: rgba(245, 158, 11, 0.24);
+}
+
+.section-tentang {
+    --surface-start: rgba(236, 253, 245, 0.62);
+    --surface-end: rgba(224, 242, 254, 0.8);
+    --glow-color: rgba(16, 185, 129, 0.25);
+}
+
+.section-galeri {
+    --surface-start: rgba(238, 242, 255, 0.62);
+    --surface-end: rgba(243, 232, 255, 0.8);
+    --glow-color: rgba(139, 92, 246, 0.3);
+}
