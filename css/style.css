@@ -1,0 +1,38 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background: #f8f4ed;
+    color: #0f172a;
+}
+
+.glass {
+    background: rgba(248, 244, 237, 0.88);
+    backdrop-filter: blur(14px);
+    border-color: rgba(59, 130, 246, 0.18);
+}
+
+.slide {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide-dot.active {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+a,
+button,
+.interactive-card {
+    cursor: pointer;
+}
+
+.interactive-card {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.interactive-card:hover {
+    transform: translateY(-2px);
+}
