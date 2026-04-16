@@ -1,6 +1,6 @@
 {
   "site": {
-    "title": "Dinas Pendidikan Kabupaten Sarmi - Beranda",
+    "title": "Dinas Perikanan Kabupaten Sarmi - Beranda",
     "language": "id",
     "timezone": "Asia/Jayapura"
   },
@@ -10,10 +10,10 @@
     "favicon": "assets/images/brand/logo.png"
   },
   "client": {
-    "name": "Dinas Pendidikan",
+    "name": "Dinas Perikanan",
     "region": "Kabupaten Sarmi",
-    "full_name": "Dinas Pendidikan Kabupaten Sarmi",
-    "tagline": "Mendorong tata kelola Pendidikan yang berkelanjutan, produktif, dan inklusif untuk kesejahteraan masyarakat pesisir."
+    "full_name": "Dinas Perikanan Kabupaten Sarmi",
+    "tagline": "Mendorong tata kelola Perikanan yang berkelanjutan, produktif, dan inklusif untuk kesejahteraan masyarakat pesisir."
   },
   "contact": {
     "instagram": "https://www.instagram.com/",
@@ -26,8 +26,8 @@
       {
         "background": "assets/images/hero/contentslides1.png",
         "badge": "Portal Resmi Pemerintah",
-        "title": "Layanan Informasi Pendidikan Kabupaten Sarmi",
-        "description": "Akses informasi kebijakan, layanan perizinan, dan program pengembangan sektor Pendidikan dalam satu portal.",
+        "title": "Layanan Informasi Perikanan Kabupaten Sarmi",
+        "description": "Akses informasi kebijakan, layanan perizinan, dan program pengembangan sektor Perikanan dalam satu portal.",
         "primary_cta": {
           "label": "Jelajahi Layanan",
           "href": "pages/layanan.html"
@@ -36,7 +36,7 @@
           "label": "Profil Instansi",
           "href": "pages/profil.html"
         },
-        "logo_caption": "Dinas Pendidikan Kabupaten Sarmi"
+        "logo_caption": "Dinas Perikanan Kabupaten Sarmi"
       },
       {
         "background": "assets/images/hero/contentslides2.png",
@@ -56,8 +56,8 @@
       {
         "background": "assets/images/hero/contentslides3.png",
         "badge": "Kolaborasi Daerah",
-        "title": "Data, Inovasi, dan Kolaborasi untuk Pendidikan Berdaya Saing",
-        "description": "Pengembangan sektor Pendidikan dilakukan melalui layanan publik yang adaptif, transparan, dan berbasis data.",
+        "title": "Data, Inovasi, dan Kolaborasi untuk Perikanan Berdaya Saing",
+        "description": "Pengembangan sektor Perikanan dilakukan melalui layanan publik yang adaptif, transparan, dan berbasis data.",
         "primary_cta": {
           "label": "Lihat Statistik",
           "href": "pages/layanan.html#data-produksi"
@@ -66,14 +66,14 @@
           "label": "Hubungi Kami",
           "href": "pages/kontak.html"
         },
-        "logo_caption": "Pendidikan Maju, Sarmi Sejahtera"
+        "logo_caption": "Perikanan Maju, Sarmi Sejahtera"
       }
     ]
   },
   "sections": {
     "services": {
       "title": "Layanan Kami",
-      "subtitle": "Rangkaian layanan publik yang dirancang untuk mendukung kebutuhan masyarakat Pendidikan secara terpadu.",
+      "subtitle": "Rangkaian layanan publik yang dirancang untuk mendukung kebutuhan masyarakat Perikanan secara terpadu.",
       "items": [
         {
           "icon": "fa-solid fa-file-signature",
@@ -99,7 +99,7 @@
         {
           "icon": "fa-solid fa-chart-column",
           "title": "Data & Informasi",
-          "description": "Penyediaan data sektor Pendidikan untuk perencanaan dan pengambilan keputusan.",
+          "description": "Penyediaan data sektor Perikanan untuk perencanaan dan pengambilan keputusan.",
           "link": "pages/layanan.html#data-produksi",
           "link_label": "Lihat Data"
         }
@@ -107,7 +107,7 @@
     },
     "news": {
       "title": "Berita Terkini",
-      "subtitle": "Update kegiatan, kebijakan, dan capaian terbaru dari lingkungan Dinas Pendidikan.",
+      "subtitle": "Update kegiatan, kebijakan, dan capaian terbaru dari lingkungan Dinas Perikanan.",
       "all_label": "Lihat Semua Berita →",
       "all_href": "pages/berita.html",
       "items": [
@@ -122,15 +122,15 @@
         {
           "image": "assets/images/berita/Berita2.png",
           "date": "05 Januari 2026",
-          "title": "Pendampingan UMKM Pengolahan Hasil Pendidikan Pesisir",
-          "excerpt": "Kolaborasi lintas OPD memperkuat daya saing produk olahan Pendidikan lokal.",
+          "title": "Pendampingan UMKM Pengolahan Hasil Perikanan Pesisir",
+          "excerpt": "Kolaborasi lintas OPD memperkuat daya saing produk olahan Perikanan lokal.",
           "href": "pages/detail.html?id=berita-2",
           "link_label": "Baca Selengkapnya →"
         },
         {
           "image": "assets/images/berita/Berita3.png",
           "date": "28 Desember 2025",
-          "title": "Monitoring Produksi Tahunan Pendidikan Tangkap Kabupaten",
+          "title": "Monitoring Produksi Tahunan Perikanan Tangkap Kabupaten",
           "excerpt": "Rekap data produksi disusun sebagai bahan evaluasi serta perencanaan program tahun berjalan.",
           "href": "pages/detail.html?id=berita-3",
           "link_label": "Baca Selengkapnya →"
@@ -138,9 +138,9 @@
       ]
     },
     "about": {
-      "title": "Tentang Dinas Pendidikan",
+      "title": "Tentang Dinas Perikanan",
       "paragraphs": [
-        "Dinas Pendidikan Kabupaten Sarmi berperan dalam perumusan kebijakan, pelaksanaan layanan, serta pemberdayaan masyarakat di sektor Pendidikan.",
+        "Dinas Perikanan Kabupaten Sarmi berperan dalam perumusan kebijakan, pelaksanaan layanan, serta pemberdayaan masyarakat di sektor Perikanan.",
         "Melalui pendekatan kolaboratif, kami memastikan program yang dijalankan relevan dengan kebutuhan nelayan, pembudidaya, dan pelaku usaha lokal."
       ],
       "primary_cta": {
@@ -155,7 +155,7 @@
         {
           "icon": "fa-solid fa-bullseye",
           "title": "Visi Pelayanan",
-          "description": "Mewujudkan sektor Pendidikan daerah yang maju, berdaya saing, dan berkelanjutan."
+          "description": "Mewujudkan sektor Perikanan daerah yang maju, berdaya saing, dan berkelanjutan."
         },
         {
           "icon": "fa-solid fa-people-group",
@@ -219,8 +219,8 @@
     }
   },
   "footer": {
-    "organization_name": "Dinas Pendidikan Kabupaten Sarmi",
-    "tagline": "Portal informasi resmi untuk layanan Pendidikan yang terbuka, adaptif, dan berpihak pada masyarakat.",
+    "organization_name": "Dinas Perikanan Kabupaten Sarmi",
+    "tagline": "Portal informasi resmi untuk layanan Perikanan yang terbuka, adaptif, dan berpihak pada masyarakat.",
     "menus": {
       "navigation": [
         {
@@ -281,7 +281,7 @@
         }
       ]
     },
-    "copyright": "© 2026 Dinas Pendidikan Kabupaten Sarmi. Seluruh hak cipta dilindungi.",
+    "copyright": "© 2026 Dinas Perikanan Kabupaten Sarmi. Seluruh hak cipta dilindungi.",
     "powered_by": {
       "label": "Powered by Nokensoft.com",
       "href": "https://nokensoft.com"
